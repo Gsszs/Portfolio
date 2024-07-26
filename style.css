@@ -36,7 +36,7 @@ a {
 }
 
 a:hover {
-    /* text-decoration: var(--roxo-1); */
+    text-decoration: var(--roxo-1);
 }
 
 .container_grid {
