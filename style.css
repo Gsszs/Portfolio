@@ -15,11 +15,15 @@ body {
     background-color: var(--fundo);
     color: #fff;
     font-family: var(--fonte);
-    overflow-x: hidden; /* Evita scroll horizontal */
-    box-sizing: border-box; /* Garante que todos os elementos usem border-box */
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 h1 {
+    font-size: 23px;
+}
+
+h2 {
     font-size: 23px;
 }
 
@@ -29,28 +33,30 @@ h4 {
 }
 
 a {
+    font-size: 14px;
     color: var(--roxo-2);
-    text-decoration: underline var(--roxo-1) 2px;
-    text-decoration-color: var(--roxo-1);
-    /* transition: text-decoration 800ms ease; */
+    text-decoration: underline 2px;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 300ms ease;
 }
 
 a:hover {
-    text-decoration: var(--roxo-1);
+    text-decoration-color: var(--roxo-1);
 }
+
+.scale-out-hor-right{animation:scale-out-hor-right .5s cubic-bezier(.55,.085,.68,.53) both}
 
 .container_grid {
     display: flex;
-    margin: 0 200px;
-    padding: 75px 0 25px 225px;
+    margin: 0 250px;
+    padding: 25px 0 25px 225px;
     box-sizing: border-box;
 }
 
 .header {
-    width: 250px;
-    height: 800px;
+    width: 300px;
+    height: 100%;
     position: fixed;
-    top: 75px;
     left: 150px;
     padding: 20px;
     display: flex;
@@ -73,21 +79,21 @@ a:hover {
     border-style: solid;
     border-width: 1px;
     border-color: var(--border-color);
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
-    margin-bottom: 20px;
-    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #perfil_card img {
-    width: 140px;
+    width: 130px;
 }
 
 .especialidades {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .especialidades .title {
@@ -96,20 +102,63 @@ a:hover {
     width: max-content;
     padding: 4px 12px;
     border-radius: 8px;
-    margin-bottom: 5px;
 }
 
 #separator {
-    width: 100%;
-    height: 3px;
+    width: 90%;
     background-color: var(--roxo-1);
     border-radius: 25px;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    padding: 2px;
+    margin-bottom: 20px;
 }
 
+#separator-2 {
+    width: 75px;
+    background-color: var(--roxo-1);
+    border-radius: 25px;
+    margin-top: 20px;
+    padding: 2px;
+    margin-bottom: 20px;
+}
+
+
+
+#contatos {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+#contatos svg {
+    width: 40px;
+    height: 40px;
+    padding-right: 10px;
+    fill: #fff;
+}
+
+.mail, .git, .in {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+#links {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+/* 
+
+                Conteúdo do Portfólio 
+
+*/
+
 #card {
-    width: 100%;
-    height: 800px;
+    width: auto;
+    height: auto;
     background-color: var(--cinza-card);
     border-radius: 25px;
     padding: 20px;
@@ -117,8 +166,85 @@ a:hover {
     border: 1px solid var(--border-color);
 }
 
-#contatos, .mail {
+#section {
     display: flex;
-    align-items: start;
-    flex-direction: column;
+    flex-direction: row;
+
+    margin-bottom: 130px;
+}
+
+.text_content {
+    height: auto;
+    width: 130px;
+    padding-right: 200px;
+}
+
+.conteudo {
+    height: 100%;
+    width: auto;
+}
+
+.tecnologias_blocos {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 25px 75px;
+}
+
+.tecnologias_blocos h5 {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.tecnologias_blocos .item {
+    width: 130px;
+    height: 45px;
+
+    border: var(--roxo-1);
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cor-inicial);
+    transition: color 500ms ease;
+    fill: #fff;
+}
+
+.tecnologias_blocos .item svg {
+    width: 35px;
+    height: 35px;
+    padding-right: 5px;
+
+    transition: fill 400ms ease;
+}
+
+.tecnologias_blocos .item:hover {
+    fill: var(--roxo-1);
+    color: var(--roxo-1);
+}
+
+.tecnologias_blocos p {
+    text-align: center;
+}
+
+.projetos .item {
+    width: 90px;
+    height: 170px;
+
+    border: var(--border-color);
+    border-style: solid;
+    border-width: 5px;
+
+    display: flex;
+    align-items: center;
+}
+
+.projetos .item img {
+    width: 320px;
+    height: 170px;
 }
