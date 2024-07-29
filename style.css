@@ -65,7 +65,7 @@ a:hover {
 
 .container_grid {
     display: flex;
-    margin: 0 250px;
+    margin: 0 200px;
     padding: 60px 0 60px 225px;
     box-sizing: border-box;
 }
@@ -75,7 +75,7 @@ a:hover {
     height: fit-content;
 
     position: fixed;
-    left: 150px;
+    left: 100px;
     padding: 20px;
     margin-top: 60px;
     margin-bottom: 60px;
@@ -166,11 +166,15 @@ a:hover {
     fill: #fff;
 }
 
+#contatos h4 {
+    margin-bottom: 5px;
+}
+
 .mail, .git, .in {
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 #links {
@@ -282,18 +286,18 @@ nav .active {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
-    gap: 25px 75px;
+    gap: 15px 40px;
     justify-content: center;
 }
 
 .tecnologias_blocos h5 {
     margin: 0;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .tecnologias_blocos .item {
-    width: 130px;
+    width: 110px;
     height: 45px;
 
     border: var(--roxo-1);
@@ -311,9 +315,9 @@ nav .active {
 }
 
 .tecnologias_blocos .item svg {
-    width: 35px;
-    height: 35px;
-    padding-right: 5px;
+    width: 30px;
+    height: 30px;
+    padding-right: 2px;
 
     transition: fill 400ms ease;
 }
@@ -330,7 +334,7 @@ nav .active {
 .projetos {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     gap:30px 70px;
 
@@ -395,13 +399,18 @@ nav .active {
     height: 100%;
 }
 
+#sobre_content #section {
+    flex-direction: column;
+}
+
 #sobre_content .text_content {
-    margin-right: 80px;
+    margin-right: 0;
+    margin-bottom: 20px;
 }
 
 #sobre_content .figure_me {
-    width: 800px;
-    height: 500px;
+    width: 600px;
+    height: 450px;
 
     background-image: url("./img/foto_eu.jpg");
     background-repeat: no-repeat;
@@ -413,10 +422,6 @@ nav .active {
     border-radius: 15px;
     border: none;
     overflow: hidden;
-
-    transition: ease-in;
-    transition-duration: 300ms;
-    transition-property: all;
 }
 
 #sobre_content .itens {
@@ -425,9 +430,8 @@ nav .active {
 
     position: relative;
 
-    bottom: 80px;
-    left: 100px;
-    right: 100px;
+    bottom: 430px;
+    left: 10px;
 
     display: flex;
     flex-direction: row;
