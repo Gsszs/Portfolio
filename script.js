@@ -2,14 +2,50 @@ const page = document
 const listNavItens = page.querySelector(".list-nav-itens")
 const navItens = listNavItens.querySelectorAll(".nav-item button")
 
-function trocarSection(button) {
-    const buttonText = button.textContent
+const portfolioButton = document.getElementById('portfolioButton');
+const sobreButton = document.getElementById('sobreButton');
 
-    navItens.forEach(itemButton => {
-        itemButton.classList.remove('active')
+const portfolioContent = document.getElementById('portfolio_content');
+const sobreContent = document.getElementById('sobre_content');
+
+
+function intial() {
+    navItens.forEach(button => {
+        if (button.innerText[0] != "P") {
+            button.classList.remove("active")
+        } else {
+            button.classList.add("active")
+        }
+    })
+
+    portfolioContent.classList.remove('unselected');
+    sobreContent.classList.add('unselected');
+}
+
+function trocarSection(button) {
+    navItens.forEach(navButton => {
+        navButton.classList.remove('active');
     });
 
-    button.classList.add('active')
+    button.classList.add('active');
+
+    const textButton = button.textContent.trim();
+
+    if (textButton === "Portfolio") {
+        sobreContent.classList.add('exit_animation');
+        setTimeout(() => {
+            sobreContent.classList.add('unselected');
+            portfolioContent.classList.remove('unselected');
+            sobreContent.classList.remove('exit_animation');
+        }, 400);
+    } else if (textButton === "Sobre-mim") {
+        portfolioContent.classList.add('exit_animation');
+        setTimeout(() => {
+            portfolioContent.classList.add('unselected');
+            portfolioContent.classList.remove('exit_animation');
+            sobreContent.classList.remove('unselected');
+        }, 300);
+    }
 }
 
 function idade() {
@@ -19,7 +55,7 @@ function idade() {
 
     let d = new Date(),
         ano_atual = d.getFullYear(),
-        mes_atual = d.getMonth() + 1, // Os meses em JavaScript são baseados em zero (0-11)
+        mes_atual = d.getMonth() + 1,
         dia_atual = d.getDate(),
 
         quantos_anos = ano_atual - ano_aniversario;
@@ -50,9 +86,10 @@ function tempo_projetos() {
     elementoTempo.textContent = 'Tempo de Projetos: ' + quantos_anos + ' anos';
 }
 
-function carregar_anos() {
+function carregar_script() {
+    intial()
     tempo_projetos()
     idade()
 }
 
-window.addEventListener('load', carregar_anos);
+window.addEventListener('load', carregar_script);

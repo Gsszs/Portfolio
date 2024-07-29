@@ -7,11 +7,26 @@
     --cinza_letra: #d6d6d6b3;
     --fundo: #121212;
     --border-color: #383838;
-    --itens-info-color: #383838b2;
+    --itens-info-color: #63636369;
     --nav-color: #2b2b2cbf;
     --nav-border: #383838;
 
     --fonte: 'Poppins', sans-serif;
+}
+
+@keyframes scale-out-center {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.exit_animation {
+    animation: scale-out-center 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 body {
@@ -394,8 +409,6 @@ nav .active {
 
     opacity: 0.8;
     filter: drop-shadow(0px 0px 50px #ffffff57);
-    -webkit-filter: drop-shadow(0px 0px 50px #ffffff57);
-    -moz-filter: drop-shadow(0px 0px 50px #ffffff57);
 
     border-radius: 15px;
     border: none;
@@ -406,21 +419,15 @@ nav .active {
     transition-property: all;
 }
 
-#sobre_content .figure_me:hover {
-    transform: scale(1.05);
-    opacity: 1;
-    /* filter: drop-shadow(0px 0px 70px #ffffff57); */
-}
-
 #sobre_content .itens {
     width: auto;
     height: auto;
 
     position: relative;
 
-    bottom: 100px;
-
-    justify-content: center;
+    bottom: 80px;
+    left: 100px;
+    right: 100px;
 
     display: flex;
     flex-direction: row;
