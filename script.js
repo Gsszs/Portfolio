@@ -1,4 +1,4 @@
-const listNavItens = page.querySelector(".list-nav-itens")
+const listNavItens = document.querySelector(".list-nav-itens")
 const navItens = listNavItens.querySelectorAll(".nav-item button")
 
 const portfolioButton = document.getElementById('portfolioButton');
