@@ -1,5 +1,5 @@
-const listNavItens = document.querySelector(".list-nav-itens")
-const navItens = listNavItens.querySelectorAll(".nav-item button")
+const listNavItens = document.querySelector(".list-nav-itens");
+const navItens = listNavItens.querySelectorAll(".nav-item button");
 
 const portfolioButton = document.getElementById('portfolioButton');
 const sobreButton = document.getElementById('sobreButton');
