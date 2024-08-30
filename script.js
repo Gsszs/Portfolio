@@ -1,4 +1,3 @@
-const page = document
 const listNavItens = page.querySelector(".list-nav-itens")
 const navItens = listNavItens.querySelectorAll(".nav-item button")
 
@@ -78,18 +77,16 @@ function tempo_projetos() {
 
         quantos_anos = ano_atual - ano;
 
-    if (mes_atual < mes || mes_atual == mes) {
-        quantos_anos--;
-    }
+    mes_atual < mes || mes_atual == mes ? quantos_anos-- : quantos_anos
 
     const elementoTempo = document.querySelector('.tempo_projetos');
     elementoTempo.textContent = 'Tempo de Projetos: ' + quantos_anos + ' anos';
 }
 
-function carregar_script() {
+function carregar_scripts() {
     intial()
     tempo_projetos()
     idade()
 }
 
-window.addEventListener('load', carregar_script);
+window.addEventListener('load', carregar_scripts);
